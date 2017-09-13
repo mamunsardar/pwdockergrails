@@ -98,17 +98,6 @@ dataSource:
     username: sa
     password: ''
 
-rabbitmq:
-    connections:
-      - name: main
-        host: localhost
-        virtualHost: /app
-        username: echo
-        password: pass
-        port: 56720
-    queues:
-      - name: testqueue
-
 environments:
     development:
         dataSource:
