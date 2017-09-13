@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+
+  app_rabbitmq:
+    image: rabbitmq:3.6.10-management
+    container_name: app_rabbitmq
+    env_file:
+      - docker_env/rabbitmq.env
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    ports:
+      - 56720:5672
+      - 56722:15672
+    networks:
+      - app_net
+
+networks:
+  app_net:
+    driver: bridge
+
+volumes:
+  rabbitmq_data:
+    external: false
